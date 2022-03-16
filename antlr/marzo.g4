@@ -54,7 +54,7 @@ print:
 // A continuación los tokens (comienzan con mayúscula)
 Type: 'int' | 'double' | 'char';
 Equality: '=';
-Id: ALPHA;
-ALPHA: [a-zA-Z_$] [a-zA-Z_$0-9]* ;
+Id: A;
+A: [a-zA-Z_$] [a-zA-Z_$0-9]* ;
 Number : [0-9]+;
 WS : [ \t\n\r]+ -> skip ;
