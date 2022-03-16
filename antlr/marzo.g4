@@ -3,15 +3,15 @@ grammar marzo;
 program : expression+;
 
 expression: 
-    arithmetic 
-    | relational 
-    | comparison
+    arithm 
+    | rel 
+    | comp
     | logic
     ;
 
-arithmetic:
-    arithmetic '+' arithmetic                             
-    | arithmetic '-' arithmetic                            
+arithm:
+    arithm      '+' arithm                             
+    | arithm    '-' arithm                            
     | Number                                   
     ;
 
@@ -19,9 +19,9 @@ declaration:
     | Type Id                               
     ; 
 
-relational:
+rel:
     declaration 
-    | assignment 
+    | assign 
     ;
 
 logic: 
@@ -36,15 +36,15 @@ logic:
     | Number 
     ;
 
-comparison:
-    'if (' logic ') then' expression+ 'end' 
-    | 'if (' logic ') then' expression+ 'else' expression+ 'end'
+comp:
+    'if (' logic ')     then' expression+ 'end' 
+    | 'if (' logic ')   then' expression+ 'else' expression+ 'end'
     | print 
     ; 
 
-assignment:
-    Id '=' logic 
-    | Id '=' arithmetic          
+assign:
+    Id      '=' logic 
+    | Id    '=' arithm          
     ; 
 
 print: 
